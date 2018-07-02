@@ -1,6 +1,8 @@
 Quiz Generator
 =============
-
+sample output images:  https://github.com/muralijajula/quizGenerator/blob/master/AddQuestion.PNG
+                       https://github.com/muralijajula/quizGenerator/blob/master/TakeQuiz.PNG
+                       
 Note: due to busy time schedules i could not able to write any TDD tests.
 
 steps to run this project :
