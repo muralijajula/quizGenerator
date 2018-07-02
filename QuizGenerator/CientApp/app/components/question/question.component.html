@@ -1,0 +1,27 @@
+<div *ngIf="success" class="alert alert-success">
+    <label class="control-label">question added successfully ...</label>
+</div>
+<br/>
+<form class="form-horizontal add-question" name="addQuestionForm" #f="ngForm">
+    <div class="form-group has-feedback">
+        <label class="control-label col-md-offset-2 col-md-3" for="questionTitle">Question:</label>
+        <div class="col-md-3">
+            <input type="text" id="add-question" name="question" placeholder="Enter question text" class="form-control" [(ngModel)]="question.questionText" #questionTitle="ngModel" required />
+        </div>
+        <div class="col-md-4">
+        </div>
+    </div>
+    <div class="form-group has-feedback">
+        <label class="control-label col-md-offset-2 col-md-3" for="answer">Answer:</label>
+        <div class="col-md-3">
+            <input type="text" id="answer" name="password" placeholder="Enter answer" class="form-control" [(ngModel)]="question.answer" #answer="ngModel" required />
+        </div>
+        <div class="col-md-4">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <button type="button" class="btn btn-primary" (click)="addQuestion()">Add Question</button>
+        </div>
+    </div>
+</form>

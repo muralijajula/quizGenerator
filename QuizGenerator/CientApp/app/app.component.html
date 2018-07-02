@@ -1,0 +1,30 @@
+﻿<div align="center">
+    <div class="row">
+        <div align="center">
+            <h3 class="text-info"> Quiz Generator</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <button type="button" class="btn btn-warning" (click)="onClickAddQuestion()" aria-haspopup="true" aria-expanded="false" style="width: 50%"><font size="6">Add Questions</font></button>
+        </div>
+        <div class="col-md-6">
+            <button type="button" class="btn btn-success" (click)="onClickGenerateQuestion()"  aria-haspopup="true" aria-expanded="false" style="width: 50%"><font size="6">Take Quiz</font></button>
+        </div>
+    </div>
+</div>
+<br/>
+
+<div align="center">
+    <div *ngIf="shouldShowQuestionModal">
+        <h1> Add Questions </h1>
+        <br/>
+        <app-question></app-question>
+    </div>
+
+    <div *ngIf="shouldShowGenerateQuestionModal">
+        <h1> Take Quiz </h1>
+        <br />
+        <take-quiz></take-quiz>
+    </div>
+</div>
