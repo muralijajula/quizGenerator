@@ -11,7 +11,8 @@ namespace QuizGenerator.Controllers
     {
         private readonly IQuizGeneratorService _quizGeneratorService;
 
-        private  static List<Question> m_questions = new List<Question>();
+        //test data
+       // private  static List<Question> m_questions = new List<Question>();
 
         public QuizGeneratorController()
         {
@@ -27,9 +28,9 @@ namespace QuizGenerator.Controllers
         // GET: QuizGenerator/getQuestion
         public JsonResult GetQuestion()
         {
-            // var question = _quizGeneratorService.GetAll()?.FirstOrDefault();
+            // var question = m_questions.OrderBy(x => Guid.NewGuid()).FirstOrDefault();
 
-            var question = m_questions.OrderBy(x => Guid.NewGuid()).FirstOrDefault();
+            var question = _quizGeneratorService.GetAll().OrderBy(x => Guid.NewGuid()).FirstOrDefault();
             return Json(question, JsonRequestBehavior.AllowGet);
         }      
 
@@ -37,11 +38,10 @@ namespace QuizGenerator.Controllers
         [HttpPost]
         public JsonResult AddQuestion(Question question)
         {
-            m_questions.Add(question);
-           // _quizGeneratorService.Insert(question);
+           // m_questions.Add(question);
 
-            return Json(true,JsonRequestBehavior.AllowGet);
-          
+          _quizGeneratorService.Insert(question);
+           return Json(true,JsonRequestBehavior.AllowGet);          
         }
         
     }
